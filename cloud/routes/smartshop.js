@@ -22,18 +22,16 @@ exports.newProd = function(req, res) {
 exports.saveProd = function(req, res) {
 	var prod = new Prod();
 	prod.set('name',req.body.name);
+	prod.set('reference',req.body.reference);
+	prod.set('quantity',parseInt(req.body.quantity));
 	prod.set('description',req.body.description);
-	prod.set('price',req.body.price);
+	prod.set('price',parseFloat(req.body.price));
 	prod.set('urlPic',req.body.urlPic);
-
-	var acl = new Parse.ACL();
-	  acl.setPublicReadAccess(true);
-	  prod.setACL(acl);
-	  
 	  prod.save().then(function(object) {
-	    res.send({ url: "/" });
+	  	res.status(200);
+	    res.redirect('/');
 	  }, function(error) {
-	    res.send('Error saving meme!');
+	    res.send('Error saving product!');
 	  });
 };
 

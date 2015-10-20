@@ -9,21 +9,31 @@
 					<div id="extra">
 						<div class="container">
 							<form name="f" method="POST" action="/prod/save">
-								<div width="80% align="center">
+								<section width="80% align="center">
 								      <h2>Add a <strong>Product</h2><br/><br/>
-								      
-								      <input type="text" name="name" placeholder="name of the product" maxlength="65" /><br/>
+								      <table border=0>
+								      <tr>
+								      <td>Name: </td><td><input type="text" name="name" placeholder="name of the product" maxlength="65" required="required" /></td></tr>
 
-								      <input type="text" name="description" placeholder="its description" maxlength="255" /><br/>
+								      <tr>
+								      <td>Description: </td><td><input type="text" name="description" placeholder="its description" maxlength="255" required="required"/></td></tr>
 
-								      <input type="text" name="price" placeholder="its price" maxlength="20" /><br/>
+								      <tr>
+								      <td>Reference: </td><td><input type="number" name="reference" placeholder="its reference" required="required"/></td></tr>
 
-								      <input type="text" name="urlPic" placeholder="its image link" onBlur="document.f.pic.src=document.f.urlPic.value" /><br/>
+								      <tr>
+								      <td>Quantity: </td><td><input type="number" name="quantity" placeholder="its quantity in stock" required="required"/></td></tr>
 
+								      <tr>
+								      <td>Price: </td><td><input type="number" step="0.001" name="price" placeholder="its price" maxlength="20" required="required" /></td></tr>
+
+								      <tr>
+								      <td>Image link: </td><td><input type="text" name="urlPic" placeholder="its image link" onBlur="document.f.pic.src=document.f.urlPic.value" required="required" /></td></tr>
+								      </table>
 								      <img name="pic" alt="its image"></img>
 								      <br/>
 									  <button name="btn_submit">Save</button>
-      								</div>
+      								</section>
 							</form>
 						</div>
 					</div>					
