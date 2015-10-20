@@ -1,0 +1,29 @@
+<!-- Banner -->
+					<div id="banner" class="container">
+						<section>
+							<p>You can add a new <strong>Product</strong> from this page. <br/>
+						</section>
+					</div>
+
+				<!-- Extra -->
+					<div id="extra">
+						<div class="container">
+							<form name="f" method="POST" action="/prod/save">
+								<div width="80% align="center">
+								      <h2>Add a <strong>Product</h2><br/><br/>
+								      
+								      <input type="text" name="name" placeholder="name of the product" maxlength="65" /><br/>
+
+								      <input type="text" name="description" placeholder="its description" maxlength="255" /><br/>
+
+								      <input type="text" name="price" placeholder="its price" maxlength="20" /><br/>
+
+								      <input type="text" name="urlPic" placeholder="its image link" onBlur="document.f.pic.src=document.f.urlPic.value" /><br/>
+
+								      <img name="pic" alt="its image"></img>
+								      <br/>
+									  <button name="btn_submit">Save</button>
+      								</div>
+							</form>
+						</div>
+					</div>					

@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "SmartShopping": {
+      "applicationId": "z7QffxJLRKIucW67A7eGrALrp0aOU6i2nwcqC1hU"
+    },
+    "_default": {
+      "link": "SmartShopping"
+    }
+  }
+}

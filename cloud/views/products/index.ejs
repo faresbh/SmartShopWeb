@@ -1,0 +1,27 @@
+<!-- Banner -->
+					<div id="banner" class="container">
+						<section>
+							<p>You can manage your <strong>Your Products</strong> from this page. <br/>
+							<a href="/prod" class="button">Add a new product</a>
+						</section>
+					</div>
+
+				<!-- Extra -->
+					<div id="extra">
+						<div class="container">
+							<div class="row no-collapse-1">
+							 <% var i=0; %>
+							  <% _(prods).each(function(prod) { %>
+							  <% i++; if ((i % 3) == 0) { %>
+							  	<div>
+							  	<div class="row no-collapse-1">
+							  <% } %>
+								<section class="4u"><img src="<%= prod.get('urlPic') %>" width="450px" height="200px" alt="">
+									<div class="box" align="center">
+										<p><%= prod.get('description') %></p>
+										<p>Price: <%= prod.get('price') %></p>
+										<a href="/prod/<%= prod.id %>" class="button">Update</a> </div>
+								</section>
+							<% }) %>
+						</div>
+					</div>					
