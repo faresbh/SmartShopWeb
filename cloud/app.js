@@ -20,11 +20,12 @@ app.locals.parseJavascriptKey = 'HRsVePrwUH5a0rTEIE1gbSRmoFtgffCOgjiWrHEP';
 app.locals._ = require('underscore');
 
 // Define all the endpoints
-app.get('/', smartshop.listprods);
-app.get('/prod', smartshop.newProd);
-app.post('/prod/save', smartshop.saveProd);
+app.get('/',smartshop.home);
+app.get('/signin',smartshop.signin);
+app.get('/prod', smartshop.listprods);
+app.get('/prod/new', smartshop.newProd);
+app.post('/prod/save', smartshop.saveNewProd);
+app.post('/prod/save/:objectId', smartshop.saveProd);
 app.get('/prod/:objectId', smartshop.updateProd);
-
-
 
 app.listen(); 

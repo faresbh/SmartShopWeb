@@ -1,0 +1,40 @@
+<!-- Banner -->
+					<div id="banner" class="container">
+						<section>
+							<p>You can update <strong>Product</strong> from this page. <br/>
+						</section>
+					</div>
+
+				<!-- Extra -->
+					<div id="extra">
+						<div class="container">
+							<form name="f" method="POST" action="/prod/save/<%= prod.id %>">
+								<section width="80%" align="center">
+								      <h2>Update a <strong>Product</strong></h2><br/><br/>
+								      <table border=0>
+								      <tr>
+								      <td>Name: </td><td><input type="text" name="name" placeholder="name of the product" maxlength="65" 
+								      value="<%= prod.get('name') %>" required="required" /></td></tr>
+
+								      <tr>
+								      <td>Description: </td><td><input type="text" name="description" placeholder="its description" maxlength="255" value="<%= prod.get('description') %>" required="required"/></td></tr>
+
+								      <tr>
+								      <td>Reference: </td><td><input type="number" name="reference" placeholder="its reference" value="<%= prod.get('reference') %>" required="required"/></td></tr>
+
+								      <tr>
+								      <td>Quantity: </td><td><input type="number" name="quantity" placeholder="its quantity in stock" value="<%= prod.get('quantity') %>" required="required"/></td></tr>
+
+								      <tr>
+								      <td>Price: </td><td><input type="number" step="0.001" name="price" placeholder="its price" maxlength="20" value="<%= prod.get('price') %>" required="required" /></td></tr>
+
+								      <tr>
+								      <td>Image link: </td><td><input type="text" name="urlPic" placeholder="its image link" onBlur="document.f.pic.src=document.f.urlPic.value" value="<%= prod.get('urlPic') %>" required="required" /></td></tr>
+								      </table>
+								      <img name="pic" src="<%= prod.get('urlPic') %>" alt="its image"/>
+								      <br/>
+									  <button name="btn_submit">Save</button>
+      								</section>
+							</form>
+						</div>
+					</div>					
