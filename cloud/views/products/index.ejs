@@ -1,30 +1,27 @@
 <!-- Banner -->
 					<div id="banner" class="container">
 						<section>
-							<p>You can manage your <strong>Your Products</strong> from this page. <br/>
-							<a href="/prod/new" class="button">Add a new product</a>
+							<p><strong>Log yourself in</strong> to access the panel. <br/>
 						</section>
 					</div>
 
 				<!-- Extra -->
 					<div id="extra">
 						<div class="container">
-							<div class="row no-collapse-1">
-							 <% var i=0; %>
-							  <% _(prods).each(function(prod) { %>
-							  <% i++; %>
-								<section class="4u"><center><img src="<%= prod.get('urlPic') %>" width="350px" height="200px" alt=""></center>
-									<div class="box" align="center">
-									<p><%= prod.get('description') %></p>
-										<p>Quantity: <%= prod.get('quantity') %></p>
-										<p>Price: <%= prod.get('price') %></p>
-										<a href="/prod/<%= prod.id %>" class="button">Update</a> </div>
-								</section>
-								<% if ((i % 3) == 0) { %>
-							  	</div>
-							  	<div class="row no-collapse-1">
-							  <% } %>
-							<% }) %>
-							</div>
+							<form name="f" method="POST" action="/sssignin">
+								<section width="80%" align="center">
+								      <h2> Your <strong>Credentials</strong></h2><br/><br/>
+								      <table border=0>
+								      <tr>
+								      <td>Email: </td><td><input type="email" name="email" placeholder="your email" required="required" /></td></tr>
+
+								      <tr>
+								      <td>Password: </td><td><input type="password" name="password" placeholder="your password" required="required"/></td></tr>
+
+								      </table>
+								      <br/>
+									  <button name="btn_submit">Sign In</button>
+      								</section>
+							</form>
 						</div>
 					</div>					

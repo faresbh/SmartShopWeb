@@ -1,0 +1,31 @@
+<!-- Banner -->
+					<div id="banner" class="container">
+						<section>
+							<p>You can manage your <strong>Your Products</strong> from this page. <br/>
+							<a href="/prod/new" class="button">Add a new product</a>
+						</section>
+					</div>
+
+				<!-- Extra -->
+					<div id="extra">
+						<div class="container">
+							<div class="row no-collapse-1">
+							 <% var i=0; %>
+							  <% _(prods).each(function(prod) { %>
+							  <% i++; %>
+								<section class="4u"><center><img src="<%= prod.get('urlPic') %>" width="350px" height="200px" alt=""></center>
+									<div class="box" align="center">
+										<p><%= prod.get('description') %></p>
+										<p>Quantity: <%= prod.get('quantity') %></p>
+										<p>Price: <%= prod.get('price') %></p>
+										<a href="/prod/<%= prod.id %>" class="button">Update</a>&nbsp;<a href="/prod/del/<%= prod.id %>" class="button">Delete</a>
+									</div>
+								</section>
+								<% if ((i % 3) == 0) { %>
+							  	</div>
+							  	<div class="row no-collapse-1">
+							  <% } %>
+							<% }) %>
+							</div>
+						</div>
+					</div>					

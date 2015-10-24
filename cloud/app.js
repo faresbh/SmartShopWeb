@@ -21,11 +21,13 @@ app.locals._ = require('underscore');
 
 // Define all the endpoints
 app.get('/',smartshop.home);
-app.get('/signin',smartshop.signin);
+app.post('/sssignin',smartshop.signin);
+app.post('/sssignout',smartshop.signout);
 app.get('/prod', smartshop.listprods);
 app.get('/prod/new', smartshop.newProd);
 app.post('/prod/save', smartshop.saveNewProd);
 app.post('/prod/save/:objectId', smartshop.saveProd);
 app.get('/prod/:objectId', smartshop.updateProd);
+app.get('/prod/del/:objectId', smartshop.deleteProd);
 
 app.listen(); 
